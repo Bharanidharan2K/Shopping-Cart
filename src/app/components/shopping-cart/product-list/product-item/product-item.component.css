@@ -4,3 +4,7 @@ img {
     height: 150px;
     object-fit: cover;
 }
+.fa-heart{
+    color: #eb1a1a;
+    cursor: pointer;
+}
