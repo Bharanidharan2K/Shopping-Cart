@@ -14,6 +14,7 @@ export class ProductServiceService {
 
   getProducts(): Observable<Product[]>{
     //TODO: Populate products from an API and return an Observable
+    console.log(productUrl);
     return this.http.get<Product[]>(productUrl);
   }
 }

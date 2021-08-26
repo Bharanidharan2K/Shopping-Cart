@@ -1,15 +1,16 @@
 <div class="container">
     <div class="forms-container">
       <div class="signin-signup">
-        <form action="#" class="sign-in-form">
+        <form #loginForm="ngForm" (ngSubmit)="loginForm.valid && login()">
           <h2 class="title">Sign in</h2>
           <div class="input-field">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username" />
+            <input class="is-invalid" type="text" placeholder="Username" name="username" #username="ngModel" required [(ngModel)]="model.username"/>
           </div>
+          <br>
           <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" />
+            <input type="password" placeholder="Password" name="password" #password="ngModel" required [(ngModel)]="model.password"/>
           </div>
           <input type="submit" value="Login" class="btn solid" />
         </form>
