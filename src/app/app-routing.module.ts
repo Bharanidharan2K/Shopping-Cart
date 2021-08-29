@@ -3,6 +3,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { LoginComponent } from "./components/login/login.component";
 import { RegisterComponent } from "./components/register/register.component";
 import { PageNotFoundComponent } from "./components/shared/page-not-found/page-not-found.component";
+import { CartListComponent } from "./components/shopping-cart/cart-list/cart-list.component";
 import { ShoppingCartComponent } from "./components/shopping-cart/shopping-cart.component";
 
 const routes : Routes = [
@@ -10,6 +11,7 @@ const routes : Routes = [
     {path: 'login', component : LoginComponent },
     {path: 'register', component : RegisterComponent },
     {path: 'shop', component : ShoppingCartComponent },
+    {path: 'cart', component : CartListComponent },
     {path: '**', component : PageNotFoundComponent },
 
 ]

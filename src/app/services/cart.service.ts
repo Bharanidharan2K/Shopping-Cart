@@ -17,19 +17,18 @@ export class CartService {
     return this.http.get<CartItem[]>(cartUrl).pipe(
       map((result: any[]) => {
         let cartItems: CartItem[] = [];
-
         for (let item of result) {
           let productExits = false;
 
           for (let i in cartItems) {
-            if (cartItems[i].productId === item.product.id) {
+            if (cartItems[i].productId === item.productId) {
               cartItems[i].qty++;
               productExits = true;
               break;
             }
           }
           if (!productExits) {
-            cartItems.push(new CartItem(item.id, item.product))
+            cartItems.push(new CartItem(item.id, item.productName, item.productId, item.qty, item.price))
           }
         }
         return cartItems;
