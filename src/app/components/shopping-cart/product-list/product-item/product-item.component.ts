@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from 'src/app/models/product';
 import { CartService } from 'src/app/services/cart.service';
 import { MessengerService } from 'src/app/services/messenger.service';
@@ -18,12 +19,16 @@ export class ProductItemComponent implements OnInit {
   wishListFlag : boolean | undefined;
   constructor(private messengerService: MessengerService,
     private cartService : CartService,
-    private wishListService : WishlistService
+    private wishListService : WishlistService,
+    private router : Router
     ) { }
 
   ngOnInit(): void {
   }
-
+  getProductView(id : any){
+    
+    this.router.navigateByUrl('/view/'+id);
+  }
   handleAddtoCart(){
     this.cartService.addProductToCart(this.productItem).subscribe(() =>{
       this.messengerService.sendMessage(this.productItem);
