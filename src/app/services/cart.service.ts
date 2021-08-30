@@ -28,7 +28,7 @@ export class CartService {
             }
           }
           if (!productExits) {
-            cartItems.push(new CartItem(item.id, item.productName, item.productId, item.qty, item.price))
+            cartItems.push(new CartItem(item.id, item.productName, item.productId, item.qty, item.price, item.imgUrl))
           }
         }
         return cartItems;

@@ -1,5 +1,15 @@
-<div class="cart-item">
-    <span>{{cartItem.productName}}</span> x
-    <span>{{cartItem.qty}}</span> : 
-    <strong>{{(cartItem.price * cartItem.qty) | currency: 'INR'}}</strong>
+<div class="row border-top border-bottom">
+    <div class="row main align-items-center">
+        <div class="col-3"><img class="img-fluid" [src]="cartItem.imgUrl"></div>
+        <div class="col">
+            <div class="row text-muted">Telivison</div>
+            <div class="row">{{cartItem.productName}}</div>
+        </div>
+        <div class="col-3"> 
+            <a href=""><span class="badge bg-danger">-</span></a>
+            <span class="badge bg-primary">{{cartItem.qty}}</span>
+            <a href=""><span class="badge bg-secondary">+</span></a>
+        </div>
+        <div class="col">{{(cartItem.price * cartItem.qty) | currency: 'INR'}}</div>
+    </div>
 </div>

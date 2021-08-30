@@ -17,6 +17,7 @@ export class CartListComponent implements OnInit {
   ];
 
   cartTotal: number = 0;
+  cartTotalItem: number = 0;
   constructor(private msg: MessengerService,
     private cartService : CartService
     ) { }
@@ -37,6 +38,7 @@ export class CartListComponent implements OnInit {
     this.cartService.getCartItems().subscribe((items : CartItem[]) => {
         this.cartList = items;
         this.calculateTotal();
+        this.calculateTotalItem();
     })
   }
 
@@ -44,6 +46,12 @@ export class CartListComponent implements OnInit {
     this.cartTotal = 0
     this.cartList.forEach(element => {
       this.cartTotal += (element.qty * element.price);
+    })
+  }
+  calculateTotalItem(){
+    this.cartTotalItem = 0
+    this.cartList.forEach(element => {
+      this.cartTotalItem +=element.qty;
     })
   }
 
