@@ -17,6 +17,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { PageNotFoundComponent } from './components/shared/page-not-found/page-not-found.component';
 import { FormsModule } from '@angular/forms';
 import { ProductViewComponent } from './components/shopping-cart/product-view/product-view.component';
+import { NgxImageZoomModule } from 'ngx-image-zoom';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ProductViewComponent } from './components/shopping-cart/product-view/pr
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgxImageZoomModule
   ],
   providers: [],
   bootstrap: [AppComponent]

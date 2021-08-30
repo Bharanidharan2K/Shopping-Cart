@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 import { CartItem } from '../models/cart-item';
 import { HttpClient } from '@angular/common/http'
 import { cartUrl } from '../config/api';
-import { Product } from '../models/product';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -37,7 +36,11 @@ export class CartService {
 
   }
 
-  addProductToCart(product: Product): Observable<any> {
+  addProductToCart(product: any): Observable<any> {
     return this.http.post(cartUrl, { product });
+  }
+
+  deleteProductFromCart(cart: CartItem): Observable<any> {
+    return this.http.delete(cartUrl+ '/' + cart.id );
   }
 }

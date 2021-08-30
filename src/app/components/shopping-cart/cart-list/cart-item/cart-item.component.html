@@ -6,9 +6,9 @@
             <div class="row">{{cartItem.productName}}</div>
         </div>
         <div class="col-3"> 
-            <a href=""><span class="badge bg-danger">-</span></a>
+            <a (click)="handleDeletetoCart()" style="cursor: pointer;"><span class="badge bg-danger">-</span></a>
             <span class="badge bg-primary">{{cartItem.qty}}</span>
-            <a href=""><span class="badge bg-secondary">+</span></a>
+            <a (click)="handleAddtoCart()" style="cursor: pointer;"><span class="badge bg-secondary">+</span></a>
         </div>
         <div class="col">{{(cartItem.price * cartItem.qty) | currency: 'INR'}}</div>
     </div>

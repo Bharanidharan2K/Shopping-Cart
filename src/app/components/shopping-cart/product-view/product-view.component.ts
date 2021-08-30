@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/models/product';
+import { CartService } from 'src/app/services/cart.service';
+import { MessengerService } from 'src/app/services/messenger.service';
 import { ProductServiceService } from 'src/app/services/product-service.service';
 
 @Component({
@@ -13,7 +15,9 @@ export class ProductViewComponent implements OnInit {
   product: any;
   
   constructor(private route : ActivatedRoute,
-    private productService : ProductServiceService
+    private productService : ProductServiceService,
+    private messengerService : MessengerService,
+    private cartService : CartService
     ) { }
 
   ngOnInit(): void {
@@ -26,6 +30,12 @@ export class ProductViewComponent implements OnInit {
     this.productService.getProductsWithId(id).subscribe(products => {
       this.product = products[0];
       // console.log(this.product)
+    })
+  }
+
+  handleAddtoCart(){
+    this.cartService.addProductToCart(this.product).subscribe(() =>{
+      this.messengerService.sendMessage(this.product);
     })
   }
 

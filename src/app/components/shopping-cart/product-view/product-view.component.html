@@ -6,7 +6,7 @@
     </div>
     <div class="row">
         <div class="col">
-                <h1 style="color: midnightblue; font-weight: bolder;">{{product.name}}</h1>
+                <h1 style="color: midnightblue; font-weight: bolder;">{{product.productName}}</h1>
                 <br><br><br>
                 <h2 style="color: tomato; font-weight: bold;">
                     {{product.price | currency:'INR'}}
@@ -14,7 +14,7 @@
                 <h4 class="card-text">{{product.description }}</h4><br><br>
 
             <button type="button" class="btn btn-danger">Buy</button>&nbsp;
-            <button type="button" class="btn btn-secondary">Add to Cart</button>
+            <button type="button" class="btn btn-secondary" (click)= "handleAddtoCart()">Add to Cart</button>
         </div>
         
     </div>
