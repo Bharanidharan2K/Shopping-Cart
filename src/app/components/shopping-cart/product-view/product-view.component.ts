@@ -13,6 +13,7 @@ import { ProductServiceService } from 'src/app/services/product-service.service'
 export class ProductViewComponent implements OnInit {
 
   product: any;
+  MainImage : any;
   
   constructor(private route : ActivatedRoute,
     private productService : ProductServiceService,
@@ -29,6 +30,7 @@ export class ProductViewComponent implements OnInit {
     let id: number = param['id'];
     this.productService.getProductsWithId(id).subscribe(products => {
       this.product = products[0];
+      this.MainImage = this.product.imgUrl
       // console.log(this.product)
     })
   }

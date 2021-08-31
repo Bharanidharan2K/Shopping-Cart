@@ -1,22 +1,24 @@
 <div class="card shadow-sm">
     <div class="row">
         <div class="col">
-            <img class="bd-placeholder-img card-img-top" [src]="product.imgUrl" />
+                <lib-ngx-image-zoom [thumbImage]="MainImage" [fullImage]=MainImage [enableLens]=true
+                [enableScrollZoom]=true [maxZoomRatio]=5 [lensWidth]=250 [lensHeight]=120 [magnification]=1>
+                </lib-ngx-image-zoom>
         </div>
     </div>
     <div class="row">
         <div class="col">
-                <h1 style="color: midnightblue; font-weight: bolder;">{{product.productName}}</h1>
-                <br><br><br>
-                <h2 style="color: tomato; font-weight: bold;">
-                    {{product.price | currency:'INR'}}
-                </h2>
-                <h4 class="card-text">{{product.description }}</h4><br><br>
+            <h1 style="color: midnightblue; font-weight: bolder;">{{product.productName}}</h1>
+            <br>
+            <h2 style="color: tomato; font-weight: bold;">
+                {{product.price | currency:'INR'}}
+            </h2>
+            <h4 class="card-text">{{product.description }}</h4><br><br>
 
             <button type="button" class="btn btn-danger">Buy</button>&nbsp;
-            <button type="button" class="btn btn-secondary" (click)= "handleAddtoCart()">Add to Cart</button>
+            <button type="button" class="btn btn-secondary" (click)="handleAddtoCart()">Add to Cart</button>
         </div>
-        
+
     </div>
-    
+
 </div>

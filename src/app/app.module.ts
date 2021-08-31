@@ -18,6 +18,7 @@ import { PageNotFoundComponent } from './components/shared/page-not-found/page-n
 import { FormsModule } from '@angular/forms';
 import { ProductViewComponent } from './components/shopping-cart/product-view/product-view.component';
 import { NgxImageZoomModule } from 'ngx-image-zoom';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { NgxImageZoomModule } from 'ngx-image-zoom';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    NgxImageZoomModule
+    NgxImageZoomModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,3 +4,23 @@ img {
     height: 300px;
     object-fit: cover;
 }
+.ngxImageZoomFull {
+    background: white !important;
+    max-height: 100%;
+    width:  80%;
+    
+}
+.ngxImageZoomContainer[_ngcontent-shy-c55] {
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    pointer-events: none;
+    float: left;
+}
+::ng-deep .ngxImageZoomContainer > img{
+    
+    overflow: hidden;
+    height: 330px;
+    pointer-events: none;
+    object-fit: cover;
+}
