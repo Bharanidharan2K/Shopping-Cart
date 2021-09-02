@@ -18,16 +18,17 @@ export class CartService {
         let cartItems: CartItem[] = [];
         for (let item of result) {
           let productExits = false;
-
+          let index: any = 0;
           for (let i in cartItems) {
             if (cartItems[i].productId === item.productId) {
+              index = i;
               cartItems[i].qty++;
               productExits = true;
               break;
             }
           }
           if(productExits){
-            cartItems[cartItems.length - 1].price = result[result.length - 1].price;
+            cartItems[index].price = item.price;
           }
           if (!productExits) {
             cartItems.push(new CartItem(item.id, item.productName, item.productId, item.qty, item.price, item.imgUrl))
