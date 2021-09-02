@@ -26,6 +26,9 @@ export class CartService {
               break;
             }
           }
+          if(productExits){
+            cartItems[cartItems.length - 1].price = result[result.length - 1].price;
+          }
           if (!productExits) {
             cartItems.push(new CartItem(item.id, item.productName, item.productId, item.qty, item.price, item.imgUrl))
           }
