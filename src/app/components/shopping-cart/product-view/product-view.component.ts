@@ -30,7 +30,7 @@ export class ProductViewComponent implements OnInit {
     let id: number = param['id'];
     this.productService.getProductsWithId(id).subscribe(products => {
       this.product = products[0];
-      this.MainImage = this.product.imgUrl
+      this.MainImage = this.product.image
       // console.log(this.product)
     })
   }

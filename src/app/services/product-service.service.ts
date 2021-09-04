@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product';
-import { productUrl, productUrlWithId } from 'src/app/config/api'
+import { productUrl, productUrlWithId, categoryUrl} from 'src/app/config/api'
 
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
@@ -26,5 +26,9 @@ export class ProductServiceService {
         return product;
       })
     )
+  }
+
+  getCategory(): Observable<any[]>{
+    return this.http.get<any[]>(categoryUrl);
   }
 }

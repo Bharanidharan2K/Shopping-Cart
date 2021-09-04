@@ -36,13 +36,13 @@ export class ProductItemComponent implements OnInit {
   }
 
   handleAddtoWishList(){
-    this.wishListService.addToWishlist(this.productItem.productId).subscribe(() =>{
+    this.wishListService.addToWishlist(this.productItem.product_id).subscribe(() =>{
       this.wishListFlag = true;
     })
   }
 
   handleDeleteWishList(){
-    this.wishListService.removeWishlist(this.productItem.productId).subscribe(() => {
+    this.wishListService.removeWishlist(this.productItem.product_id).subscribe(() => {
       this.wishListFlag = false;
     })
   }

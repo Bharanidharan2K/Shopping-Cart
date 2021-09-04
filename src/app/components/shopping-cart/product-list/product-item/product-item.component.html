@@ -1,6 +1,6 @@
 <div class="card shadow-sm">
     <img class="bd-placeholder-img card-img-top"
-    [src]="productItem.imgUrl" style="cursor: pointer;" (click)="getProductView(productItem.productId)"/>
+    [src]="productItem.image" style="cursor: pointer;" (click)="getProductView(productItem.product_id)"/>
 
     <div class="card-body">
         <p class="cart-text">
@@ -12,7 +12,7 @@
       <div class="d-flex justify-content-between align-items-center">
         <div class="btn-group">
           <button type="button" class="btn btn-sm btn-primary" (click)= "handleAddtoCart()">Add to Cart</button>
-          <button type="button" class="btn btn-sm btn-outline-secondary" (click)="getProductView(productItem.productId)">View Details</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary" (click)="getProductView(productItem.product_id)">View Details</button>
         </div>
         
       </div>

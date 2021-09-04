@@ -1,9 +1,9 @@
 <div class="row border-top border-bottom">
     <div class="row main align-items-center">
-        <div class="col-3"><img class="img-fluid" [src]="cartItem.imgUrl"></div>
+        <div class="col-3"><img class="img-fluid" [src]="cartItem.image"></div>
         <div class="col">
             <div class="row text-muted">Telivison</div>
-            <div class="row">{{cartItem.productName}}</div>
+            <div class="row">{{cartItem.product_name}}</div>
         </div>
         <div class="col-3"> 
             <a (click)="handleDeletetoCart()" style="cursor: pointer;"><span class="badge bg-danger">-</span></a>

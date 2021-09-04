@@ -20,7 +20,7 @@ export class CartService {
           let productExits = false;
           let index: any = 0;
           for (let i in cartItems) {
-            if (cartItems[i].productId === item.productId) {
+            if (cartItems[i].product_id === item.product_id) {
               index = i;
               cartItems[i].qty++;
               productExits = true;
@@ -31,7 +31,7 @@ export class CartService {
             cartItems[index].price = item.price;
           }
           if (!productExits) {
-            cartItems.push(new CartItem(item.id, item.productName, item.productId, item.qty, item.price, item.imgUrl))
+            cartItems.push(new CartItem(item.cart_id, item.product_name, item.product_id, item.qty, item.price, item.image))
           }
         }
         return cartItems;
@@ -45,6 +45,6 @@ export class CartService {
   }
 
   deleteProductFromCart(cart: CartItem): Observable<any> {
-    return this.http.delete(cartUrl+ '/' + cart.id );
+    return this.http.delete(cartUrl+ '/' + cart.cart_id );
   }
 }

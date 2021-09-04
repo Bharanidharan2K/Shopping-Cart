@@ -1,5 +1,14 @@
+<div class="row">
+  <div class="col-md-6">
+    <select class="mdb-select md-form form-control btn-dark" searchable="Search here.." (change)="onDropdownClick($event)">
+      <option value="" >Choose your Category</option>
+      <option [ngValue]="category" *ngFor="let category of categoryList">{{category.category_name}}</option>
+    </select>
+  </div>
+</div>
+<hr>
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-    <div class="col" *ngFor="let product of productList">
-      <app-product-item [productItem] = "product" [wishListFlag] = "wishList.indexOf(product.productId) >= 0"></app-product-item>
+    <div class="col" *ngFor="let product of filteredProductList">
+      <app-product-item [productItem] = "product" [wishListFlag] = "wishList.indexOf(product.product_id) >= 0"></app-product-item>
     </div>
 </div>

@@ -3,6 +3,7 @@ import { environment } from "src/environments/environment";
 
 export const baseUrl = environment.production ? '' : 'http://localhost:5000'
 export const productUrl = baseUrl+'/products'
+export const categoryUrl = baseUrl+'/category'
 export const productUrlWithId = productUrl+'/'
 export const cartUrl = baseUrl+'/cart'
 export const wishListUrl = baseUrl+'/wishlist'
